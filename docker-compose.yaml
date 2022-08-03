@@ -1,0 +1,15 @@
+version: "3"
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: 112358ann/server
+    container_name: myapp-node-app
+    volumes:
+      - ./:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - "5001:5001"
+    environment:
+      - NODE_ENV=development
